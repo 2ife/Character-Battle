@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>캐릭터 배틀</title>
+  </head>
+  <body>
+    <div class="top">
+      <div class="round">
+        <h2>라운드</h2>
+        <input type="text" value="1" readonly />
+      </div>
+      <div class="life">
+        <h2>라이프</h2>
+        <input type="text" value="3000" readonly />
+      </div>
+      <div class="gold">
+        <h2>금</h2>
+        <input type="text" value="800" readonly />
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="battleField">
+        <div>
+          <h2>1라인 →</h2>
+          <h2>2라인 →</h2>
+          <h2>3라인 →</h2>
+        </div>
+        <table class="battleBoard">
+          <tr>
+            <td class="enemyZone"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="enemyZone"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="enemyZone"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <p class="enemyInfo">
+        <적 정보> 한 라운드에 각 라인별로 리쿰 5기, 셀 5기, 비루스 1기가
+        나옵니다.
+        <br />
+        (5라운드별로 비루스 1기가 더 나옵니다.)
+        <br /><img src="Enemies/1.jpg" /> 리쿰(파워:
+        <span class="enemyPower"></span>)
+        <img src="Enemies/2.jpg" />
+        셀(파워: <span class="enemyPower"></span>)
+        <img src="Enemies/3.jpg" />
+        비루스(파워: <span class="enemyPower"></span>)
+      </p>
+    </div>
+    <div class="shop">
+      <p>
+        <button id="lotteryBtn">뽑기</button> (비용: 금
+        <span class="lotteryCost">100</span>)
+        <button id="probability">뽑기 확률</button>
+      </p>
+      <ul class="characterList"></ul>
+      <div class="readyPart">
+        <div class="levelUp">
+          <span class="level">1</span>단계/ 경험치:<span class="exp">0</span>
+          <button id="levelUpBtn">승급</button>
+          <table>
+            <tr>
+              <td>경험치</td>
+              <td>승급</td>
+              <td>비용(금)</td>
+            </tr>
+            <tr>
+              <td>4500</td>
+              <td>2단계</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>50000</td>
+              <td>3단계</td>
+              <td>800</td>
+            </tr>
+          </table>
+        </div>
+        <button id="battleBtn">전투!</button>
+      </div>
+    </div>
+    <div class="probabilityInfo HIDE">
+      <ul>
+        <li>
+          1단계 뽑기 확률
+          <ul>
+            <li>1성: 80%</li>
+            <li>2성: 15%</li>
+            <li>3성: 5%</li>
+          </ul>
+        </li>
+        <li>
+          2단계 뽑기 확률
+          <ul>
+            <li>2성: 50%</li>
+            <li>3성: 45%</li>
+            <li>4성: 3.5%</li>
+            <li>5성: 1.5%</li>
+          </ul>
+        </li>
+        <li>
+          3단계 뽑기 확률
+          <ul>
+            <li>3성: 50%</li>
+            <li>4성: 35%</li>
+            <li>5성: 15%</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="characterInfo">
+        <table>
+          <tr>
+            <td>1성</td>
+            <td>
+              <div class="character">
+                <img src="characters/1.jpg" />
+                <p>루피(<span class="characterPower">150</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/2.jpg" />
+                <p>조로(<span class="characterPower">200</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/3.jpg" />
+                <p>로우(<span class="characterPower">250</span>)</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2성</td>
+            <td>
+              <div class="character">
+                <img src="characters/4.jpg" />
+                <p>에넬(<span class="characterPower">350</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/5.jpg" />
+                <p>에이스(<span class="characterPower">400</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/6.jpg" />
+                <p>루치(<span class="characterPower">500</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/7.jpg" />
+                <p>검은수염(<span class="characterPower">600</span>)</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3성</td>
+            <td>
+              <div class="character">
+                <img src="characters/8.jpg" />
+                <p>미호크(<span class="characterPower">800</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/9.jpg" />
+                <p>흰수염(<span class="characterPower">1000</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/10.jpg" />
+                <p>골드로져(<span class="characterPower">1500</span>)</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4성</td>
+            <td>
+              <div class="character">
+                <img src="characters/11.jpg" />
+                <p>피콜로(<span class="characterPower">3000</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/12.jpg" />
+                <p>프리저(<span class="characterPower">5000</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/13.jpg" />
+                <p>트랭크스(<span class="characterPower">6000</span>)</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5성</td>
+            <td>
+              <div class="character">
+                <img src="characters/14.jpg" />
+                <p>골드프리저(<span class="characterPower">8000</span>)</p>
+              </div>
+            </td>
+            <td>
+              <div class="character">
+                <img src="characters/15.jpg" />
+                <p>손오공블루(<span class="characterPower">15000</span>)</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="changeTurn.js"></script>
+  </body>
+</html>
